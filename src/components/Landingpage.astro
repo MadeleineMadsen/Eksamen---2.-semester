@@ -1,15 +1,47 @@
-
-    <img
+---
+import KnapLanding from "../components/KnapLanding.astro";
+import KnapSecond from "../components/KnapSecond.astro";
+---
+<div class="head_img">
+   <img
       src="../../public/img/logo_headerbillede.webp"
       alt="Billede af Boom Butik tøj"
     />
+<KnapLanding/>
+</div>
+
     <h1>Velkommen til vores komfortable univers</h1>
     <h2>Et community hvor alle kan sprede deres vinger</h2>
+<KnapSecond/>
 
 <style>
   body {
     margin: 0;
     padding: 0;
+  }
+  .head_img {
+    position: relative;
+  }
+  a {
+    text-decoration:none;
+    position: absolute;
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+left: 50%;
+  top: 82%;
+  transform: translate(-50%, -50%);
+  padding: 4px 0px 4px 0px;
+background: #0A369D;
+box-shadow: 0px 4px 8px rgba(0, 15, 115, 0.08);
+border-radius: 4px;
+width: 137px;
+height: 27px;
+font-weight: 700;
+font-size: 12px;
+line-height: 27px;
+color: #FFFFFF;
   }
   img {
     width: 100%;
@@ -22,13 +54,61 @@
     font-family: poppins;
   }
   h1 {
-    font-size: 32px;
-    line-height: 40px;
+    font-size: 20px;
+    line-height: 20px;
     font-weight: 700;
+    padding: 20px 20px 0px 20px;
   }
   h2 {
-    font-size: 24px;
-    line-height: 34px;
+    font-size: 14px;
+    line-height: 20px;
     font-weight: 400;
+    padding: 10px 20px 0px 20px;
   }
 </style>
+
+
+<!-- /* Stor knap */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 24px 0px 32px;
+gap: 8px;
+
+position: absolute;
+width: 193px;
+height: 48px;
+left: calc(50% - 193px/2 - 7.5px);
+top: 705px;
+
+/* Blue */
+background: #0A369D;
+/* Blue button */
+box-shadow: 0px 4px 8px rgba(0, 15, 115, 0.08);
+border-radius: 4px;
+
+
+/* Primary Button */
+
+width: 137px;
+height: 27px;
+
+/* H4 Desktop */
+font-family: 'Poppins';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 27px;
+/* identical to box height */
+
+/* Body/FFFFFF */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0; -->
