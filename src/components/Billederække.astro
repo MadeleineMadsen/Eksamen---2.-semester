@@ -1,0 +1,124 @@
+<!-- HTML -->
+<h3 class="h33">Style sammen med</h3>
+
+<section>
+<div class="Billede1">
+<img src="/img/test1.webp" alt="Testbillede">
+</div>
+    
+<div class="Billede2">
+<img src="/img/test2.webp" alt="Testbillede">
+</div>
+    
+<div class="Billede3">
+<img src="/img/test3.webp" alt="Testbillede">
+</div>
+
+<div class="Billede4">
+<img src="/img/test1.webp" alt="Testbillede">
+</div>
+        
+<div class="Billede5">
+<img src="/img/test2.webp" alt="Testbillede">
+</div>
+</section>
+
+<!-- Styling -->
+<style>
+img {
+    max-width: 100%;
+}
+/* Mobil version */
+
+/* Tekst */
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.h33 {
+    margin-left: 50px;
+    margin-bottom: 0;
+}
+
+/* Grid */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 5px;
+}
+
+.Billede1 {
+  grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.Billede2 {
+  grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.Billede3 {
+  grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.Billede4 {
+  grid-column: 4 / 5;
+    grid-row: 1;
+}
+
+.Billede5 {
+  grid-column: 5 / 6;
+    grid-row: 1;
+}
+
+
+/* Desktop version */
+@media (min-width: 800px) {
+
+/* Tekst */
+  h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+/* Grid */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  gap: 1em;
+
+  padding: 30px;
+}
+
+.Billede1 {
+  grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.Billede2 {
+  grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.Billede3 {
+  grid-column: 3 / 4;
+    grid-row: 1;
+}
+
+.Billede4 {
+  grid-column: 4 / 5;
+    grid-row: 1;
+}
+
+.Billede5 {
+  grid-column: 5 / 6;
+    grid-row: 1;
+}
+}
+</style>
+
+    
