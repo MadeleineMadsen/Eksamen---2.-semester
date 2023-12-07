@@ -1,0 +1,110 @@
+<!-- HTML -->
+<section>
+<div class="B-T1">
+<img src="/img/test1.webp" alt="Testbillede">
+
+<h3>Blå sweatshirt</h3>
+<p>150 kr</p>
+</div>
+
+<div class="B-T2">
+<img src="/img/test2.webp" alt="Testbillede">
+
+<h3>Grå sweatshirt</h3>
+<p>150 kr</p>
+</div>
+
+<div class="B-T3">
+<img src="/img/test3.webp" alt="Testbillede">
+
+<h3>Sort sweatshirt</h3>
+<p>150 kr</p>
+</div>
+</section>
+
+<!-- Styling -->
+<style>
+img {
+    max-width: 100%;
+}
+/* Mobil version */
+
+/* Tekst */
+h3 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Grid */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1em;
+
+  padding: 20px;
+}
+
+.B-T1 {
+  grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.B-T2 {
+  grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.B-T3 {
+  grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+/* Desktop version */
+@media (min-width: 800px) {
+
+/* Tekst */
+  h3 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 36px;
+}
+
+p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* Grid */
+section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1em;
+
+  padding: 80px;
+}
+
+.B-T1 {
+  grid-column: 1 / 2;
+    grid-row: 1;
+}
+
+.B-T2 {
+  grid-column: 2 / 3;
+    grid-row: 1;
+}
+
+.B-T3 {
+  grid-column: 3 / 4;
+    grid-row: 1;
+}
+}
+</style>
+
