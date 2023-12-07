@@ -1,39 +1,44 @@
 <section>
   <div class="Billede1">
     <img src="/img/test1.webp" alt="Testbillede" />
+    <h3>Hoodie</h3>
+    <p>175 kr</p>
   </div>
 
   <div class="Billede2">
     <img src="/img/test2.webp" alt="Testbillede" />
+    <h3>Sweatshirt</h3>
+    <p>200 kr</p>
   </div>
 
   <div class="Billede3">
     <img src="/img/test3.webp" alt="Testbillede" />
-  </div>
-
-  <div class="Billede4">
-    <img src="/img/test1.webp" alt="Testbillede" />
-  </div>
-
-  <div class="Billede5">
-    <img src="/img/test2.webp" alt="Testbillede" />
+    <h3>T-shirt</h3>
+    <p>100 kr</p>
   </div>
 </section>
 
 <style>
   img {
     max-width: 100%;
+    height: auto;
   }
   section {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 5px;
     background-color: #f2e6b6;
     padding: 20px;
-    margin-bottom: 20px;
-    margin-top: 100px;
+    padding-top: 30px;
+    margin-bottom: 40px;
+    margin-top: 110px;
   }
-
+  h3 {
+    font-size: 12px;
+  }
+  p {
+    font-size: 10px;
+  }
   .Billede1 {
     grid-column: 1 / 2;
     grid-row: 1;
@@ -49,13 +54,19 @@
     grid-row: 1;
   }
 
-  .Billede4 {
-    grid-column: 4 / 5;
-    grid-row: 1;
-  }
-
-  .Billede5 {
-    grid-column: 5 / 6;
-    grid-row: 1;
+  @media (min-width: 800px) {
+    section {
+      margin-top: 165px;
+      padding: 80px;
+      gap: 1em;
+      padding-top: 50px;
+      padding-bottom: 30px;
+    }
+    h3 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 </style>

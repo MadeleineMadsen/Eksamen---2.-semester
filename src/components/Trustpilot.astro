@@ -6,6 +6,14 @@
   <div class="Billede2">
     <img src="/img/trust2.webp" alt="Testbillede" />
   </div>
+
+  <div class="Billede3">
+    <img src="/img/trust1.webp" alt="Testbillede" />
+  </div>
+
+  <div class="Billede4">
+    <img src="/img/trust3.webp" alt="Testbillede" />
+  </div>
 </section>
 
 <style>
@@ -14,11 +22,9 @@
   }
   section {
     display: grid;
-    grid-template-columns: 2, 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 5px;
     padding: 20px;
-    margin-bottom: 20px;
-
     align-items: center;
   }
 
@@ -32,15 +38,38 @@
     grid-row: 1;
   }
 
-  /* .Billede3 {
+  .Billede3,
+  .Billede4 {
+    display: none;
+  }
+
+  @media (min-width: 800px) {
+    section {
+      display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    margin: 0 60px 20px 60px;
+    }
+    .Billede1 {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+
+  .Billede2 {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .Billede3 {
+    display: grid;
     grid-column: 3 / 4;
     grid-row: 1;
   }
 
   .Billede4 {
+    display: grid;
     grid-column: 4 / 5;
     grid-row: 1;
-  } */
+  }
+
 </style>
 
 <!--   <div class="Billede3">
