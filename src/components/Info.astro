@@ -1,0 +1,112 @@
+<div class="container">
+  <button type="button" class="collapsible"
+    >Beskrivelse<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>Ekstrem simpel, men stadig ekstrem lækker crewneck sweatshirt.</p>
+  </div>
+
+  <button type="button" class="collapsible"
+    >Detaljer<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>Fruit of the Loom</p>
+    <p>80 % bomuld, 20 % polyester</p>
+
+    <p><strong>Særlige varianter</strong></p>
+    <p>
+      De mørkegrå og olivengrønne er af modellen Premium Set-In Sweat. Det
+      betyder kun at kvaliteten er en smule tykkere og blødere. De koster os
+      lidt mere i indkøb og er derfor 25 kr. dyrere end de andre crews. De
+      består af 70 % bomuld og 30 % polyester.
+    </p><p>
+      Den mørkebrune er af mærket Gildan, men modellen ligner vores andre
+      crewneck sweatshirts fra Fruit of the Loom. Den er også en smule dyrere i
+      indkøb og ligger derfor også til 175 kr. Den består af lige dele bomuld og
+      polyester.
+    </p>
+  </div>
+
+  <button type="button" class="collapsible"
+    >Levering og retur<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>
+      <strong>Levering</strong>
+    </p>
+    <p>Alle ordrer, der bestilles inden 15.30 i hverdagen, sendes samme dag.</p>
+
+    <p><strong>Retur</strong></p>
+    <p>Det er virkelig nemt at returnere en vare, hvis du har behov for det.</p>
+
+    <p>
+      I din pakke ligger der et selvklæbende returlabel, som du blot skal sætte
+      på pakken og indlevere hos en GLS-pakkeshop. Du behøver ikke at gøre mere
+      end det.
+    </p>
+
+    <p>
+      Når vi har modtaget din returnering, tilbagebetaler vi varen/varernes
+      pris. Vi beholder dog 25 kr. til at dække noget af omkostningen for
+      returfragten. Det er ikke pr. returneret vare, men pr. returneret ordre.
+    </p>
+  </div>
+</div>
+
+<style>
+  .collapsible .icon::before {
+    content: "+";
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .collapsible.active .icon::before {
+    content: "-";
+    margin-right: 10px;
+  }
+  .collapsible {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .collapsible.active {
+    background-color: #f2e6b6;
+  }
+  .content {
+    max-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    font-size: 14px;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ecedec;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .active + .content {
+    max-height: 800px;
+  }
+  .container {
+    margin-bottom: 40px;
+    padding: 0 20px 0 20px;
+  }
+</style>
+<script>
+  const coll = document.querySelectorAll(".collapsible");
+
+  coll.forEach((element) => {
+    element.addEventListener("click", function () {
+      element.classList.toggle("active");
+    });
+  });
+</script>
