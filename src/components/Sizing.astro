@@ -1,0 +1,77 @@
+<h3>Størrelse</h3>
+
+<section>
+  <div class="str1">XS</div>
+  <div class="str2">S</div>
+  <div class="str3">M</div>
+  <div class="str4">L</div>
+  <div class="str5">XL</div>
+  <div class="str6">XXL</div>
+  <div class="str7">XXXL</div>
+</section>
+
+<style>
+  h3 {
+    font-size: 16px;
+    margin-left: 25px;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    margin: 0 20px 20px 20px;
+    justify-content: center;
+    justify-items: center;
+  }
+  .str1,
+  .str2,
+  .str3,
+  .str4,
+  .str5,
+  .str6,
+  .str7 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: smaller;
+    height: 40px;
+    width: 40px;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    grid-row: 1;
+    margin: 4px;
+  }
+
+  .str1 {
+    grid-column: 1 / 2;
+  }
+  .str2 {
+    grid-column: 2 / 3;
+  }
+  .str3 {
+    grid-column: 3 / 4;
+  }
+  .str4 {
+    grid-column: 4 / 5;
+  }
+  .str5 {
+    grid-column: 5 / 6;
+  }
+  .str6 {
+    grid-column: 6 / 7;
+  }
+  .str7 {
+    grid-column: 7 / 8;
+  }
+
+  .str1:hover,
+  .str2:hover,
+  .str3:hover,
+  .str4:hover,
+  .str5:hover,
+  .str6:hover,
+  .str7:hover {
+    cursor: pointer;
+    color: #f2e6b6;
+    background-color: #0a369c;
+  }
+</style>

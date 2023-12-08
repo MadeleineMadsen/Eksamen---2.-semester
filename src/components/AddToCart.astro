@@ -1,0 +1,117 @@
+<section>
+  <div class="venstre">
+    <div class="frame">
+      <div class="center container">
+        <div class="button col col-1">
+          <button id="minus-btn" style="border:none">-</button>
+        </div>
+        <div class="number col col-2">
+          <h3 id="count">0</h3>
+        </div>
+        <div class="button col col-1">
+          <button id="plus-btn" style="border:none">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="højre">
+    <a href="boombutik.dk">Tilføj til kurv</a>
+  </div>
+</section>
+
+<style>
+  .frame {
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+  }
+
+  .container {
+    display: flex;
+    width: 100px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+  }
+  h3 {
+    margin: 0;
+    margin-top: 4px;
+    padding: 0;
+    user-select: none;
+    font-weight: 400;
+  }
+  .col > button,
+  .number {
+    text-align: center;
+  }
+
+  button {
+    color: #000000;
+    user-select: none;
+    background-color: #ffffff;
+  }
+  #plus-btn,
+  #minus-btn {
+    font-size: larger;
+  }
+  .col-1 {
+    margin: 0 8px 4px 8px;
+    outline: none;
+  }
+  .venstre {
+    grid-column: 1 / 2;
+    grid-row: 1;
+  }
+  .højre {
+    grid-column: 2 / 4;
+    grid-row: 1;
+  }
+
+  a {
+    text-decoration: none;
+    padding: 18px 40px 18px 40px;
+    margin-left: 20px;
+    background: #0a369d;
+    box-shadow: 0px 4px 8px rgba(0, 15, 115, 0.08);
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #ffffff;
+  }
+
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px 30px 40px 30px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let minusBtn = document.getElementById("minus-btn");
+    let count = document.getElementById("count");
+    let plusBtn = document.getElementById("plus-btn");
+
+    if (count) {
+      let countNum = 0;
+      count.innerHTML = countNum.toString();
+
+      minusBtn?.addEventListener("click", () => {
+        if (countNum > 0) {
+          countNum -= 1;
+          count!.innerHTML = countNum.toString();
+        }
+      });
+
+      plusBtn?.addEventListener("click", () => {
+        countNum += 1;
+        count!.innerHTML = countNum.toString();
+      });
+    }
+  });
+</script>
