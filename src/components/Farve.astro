@@ -41,14 +41,23 @@
     grid-row: 1;
     background-color: #000000;
   }
-  .farve1:hover {
-    border: 4px solid #0a369c;
-    cursor: pointer;
-  }
+  @media (min-width: 800px) {
+    .farve1:hover {
+      border: 4px solid #0a369c;
+      cursor: pointer;
+    }
 
-  .farve2:hover,
-  .farve3:hover {
-    border: 4px solid #f2e6b6;
-    cursor: pointer;
+    .farve2:hover,
+    .farve3:hover {
+      border: 4px solid #f2e6b6;
+      cursor: pointer;
+    }
+    .farve1,
+    .farve2,
+    .farve3 {
+      height: 35px;
+      width: 110px;
+      margin-bottom: 25px;
+    }
   }
 </style>
