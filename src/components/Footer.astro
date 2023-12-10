@@ -86,22 +86,13 @@
       </div>
       <div class="danish_box">
         <div class="box_1"><p>Dansk</p></div>
-        <div class="box_2"><p>Danmark (DKK kr.)</p></div>
+        <div class="box_2"><p>(DKK kr.)</p></div>
       </div>
     </div>
-    <div class="adress">
-      <div>
-        <p>© 2023 Boom Butik ApS 44150875</p>
-        <p>Blågårdsgade 14, 2200 København N</p>
-      </div>
-      <div class="icon__container">
-        <img src="/pictures/insta.svg" alt="" />
-        <img src="/pictures/tiktok.svg" alt="" />
-      </div>
-    </div>
+
     <div class="customer__service">
       <div class="info">
-        <h3>Customer service</h3>
+        <h3>Kundeservice</h3>
         <!-- <div class="list"> -->
         <li>
           <a href="#">Kontakt</a>
@@ -134,8 +125,17 @@
       <h3>Nyhedsbrev</h3>
 
       <p>Tilmeld dog vores nyhedsbrev</p>
-      <input type="E-mail" placeholder="Email
-          " />
+      <input type="E-mail" placeholder="Email" />
+    </div>
+    <div class="adress">
+      <div>
+        <p>© 2023 Boom Butik ApS 44150875</p>
+        <p>Blågårdsgade 14, 2200 København N</p>
+      </div>
+      <div class="icon__container">
+        <img src="../../public/img/insta.svg" alt="" />
+        <img src="../../public/img/tiktok.svg" alt="" />
+      </div>
     </div>
   </div>
 
@@ -202,7 +202,7 @@
 
     .box_1 {
       max-width: 100%;
-      border: black solid 1px;
+      border: #0a369d solid 1px;
       width: 6rem;
       height: 2.5rem;
       margin: 2px;
@@ -210,13 +210,14 @@
     }
 
     .box_1 p {
-      margin: 11px;
-      right: -1rem;
-      position: relative;
+      margin-left: 32px;
+
+      font-size: 10px;
+      margin-top: 14px;
     }
     .box_2 {
       max-width: 100%;
-      border: black solid 1px;
+      border: #0a369d solid 1px;
       width: 8rem;
       height: 2.5rem;
       margin: 2px;
@@ -224,10 +225,12 @@
     }
 
     .box_2 p {
-      margin: 11px;
-      right: -0.5rem;
-      position: relative;
-      font-size: 12px;
+      margin-left: 20px;
+
+      font-size: 10px;
+      margin-top: 14px;
+      margin-left: 45px;
+      margin-top: 14px;
     }
 
     .danish_box {
@@ -243,14 +246,16 @@
     .boom {
       width: 7rem;
       height: 7rem;
+      display: flex;
+      align-items: center;
     }
 
     .boom__container {
       display: flex;
       flex-direction: column;
-      width: 400px;
-      margin-right: 10px;
-      padding: 10px;
+      margin-left: 80px;
+      padding: 11px;
+      align-items: center;
     }
 
     .customer__service {
@@ -258,16 +263,16 @@
       flex-wrap: wrap;
       /* width: ; */
       gap: 2rem;
-      order: 1;
+      /* order: 2; */
     }
 
     .adress {
       display: flex;
       /* flex-wrap: wrap-reverse; */
       flex-direction: column;
-      margin-left: 20px;
+      margin-left: 67px;
       margin-top: 3rem;
-      order: 2;
+      /* order: 3; */
     }
     .adress p {
       /* position: relative;
@@ -280,6 +285,7 @@
       flex-direction: column;
       justify-content: flex-start;
       gap: 1rem;
+      padding-left: 44px;
     }
     .info li {
       list-style: none;
@@ -298,13 +304,18 @@
       gap: 1rem;
     }
     .email {
-      order: 3;
+      width: 100%;
+      padding-left: 44px;
     }
     .email input {
-      border: solid 2px;
+      border: #0a369d solid 1px;
       height: 2rem;
       background-color: #f2e6b6;
       border-radius: 3px;
+    }
+
+    .placeholder {
+      margin-left: 2rem;
     }
 
     .kort {
@@ -333,7 +344,7 @@
 
     .box_1 {
       max-width: 100%;
-      border: black solid 1px;
+      border: #0a369d solid 1px;
       width: 6rem;
       height: 2.5rem;
       margin: 2px;
@@ -342,13 +353,16 @@
 
     .box_1 p {
       margin: 11px;
-      right: -0.3rem;
-      position: relative;
+
+      font-size: 10px;
+      font-weight: bold;
+      margin-left: 17px;
+      margin-top: 15px;
     }
     .box_2 {
       max-width: 100%;
-      border: black solid 1px;
-      width: 9rem;
+      border: #0a369d solid 1px;
+      width: 10rem;
       height: 2.5rem;
       margin: 2px;
       border-radius: 3px;
@@ -356,9 +370,10 @@
 
     .box_2 p {
       margin: 11px;
-      right: -0.5rem;
-      position: relative;
-      font-size: 12px;
+      font-size: 10px;
+      font-weight: bold;
+      margin-left: 32px;
+      margin-top: 14px;
     }
 
     .danish_box {
@@ -392,7 +407,7 @@
       gap: 5rem;
     }
     .adress {
-      margin-top: 3rem;
+      margin-top: -3rem;
       display: flex;
       justify-content: space-around;
       flex-direction: column;
@@ -427,7 +442,7 @@
     } */
 
     .email input {
-      border: solid 2px;
+      border: #0a369d solid 1px;
       height: 2rem;
       background-color: #f2e6b6;
       border-radius: 3px;
