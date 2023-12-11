@@ -2,131 +2,127 @@
 <h3 class="h33">Style sammen med</h3>
 
 <section>
-<div class="Billede1">
-<img src="/img/test1.webp" alt="Testbillede">
-</div>
-    
-<div class="Billede2">
-<img src="/img/test2.webp" alt="Testbillede">
-</div>
-    
-<div class="Billede3">
-<img src="/img/test3.webp" alt="Testbillede">
-</div>
+  <div class="Billede1">
+    <img src="/img/test1.webp" alt="Testbillede" />
+  </div>
 
-<div class="Billede4">
-<img src="/img/test1.webp" alt="Testbillede">
-</div>
-        
-<div class="Billede5">
-<img src="/img/test2.webp" alt="Testbillede">
-</div>
+  <div class="Billede2">
+    <img src="/img/test2.webp" alt="Testbillede" />
+  </div>
+
+  <div class="Billede3">
+    <img src="/img/test3.webp" alt="Testbillede" />
+  </div>
+
+  <div class="Billede4">
+    <img src="/img/test1.webp" alt="Testbillede" />
+  </div>
+
+  <div class="Billede5">
+    <img src="/img/test2.webp" alt="Testbillede" />
+  </div>
 </section>
 
 <!-- Styling -->
 <style>
-img {
+  img {
     max-width: 100%;
-}
-/* Mobil version */
+  }
+  /* Mobil version */
 
-/* Tekst */
-h3 {
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 27px;
-}
+  /* Tekst */
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+  }
 
-.h33 {
+  .h33 {
     margin-left: 20px;
     margin-bottom: 0;
-}
+  }
 
-/* Grid */
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 5px;
+  /* Grid */
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
 
-  padding: 20px;
-  margin-bottom: 40px;
-}
+    padding: 20px;
+    margin-bottom: 40px;
+  }
 
-.Billede1 {
-  grid-column: 1 / 2;
+  .Billede1 {
+    grid-column: 1 / 2;
     grid-row: 1;
-}
+  }
 
-.Billede2 {
-  grid-column: 2 / 3;
+  .Billede2 {
+    grid-column: 2 / 3;
     grid-row: 1;
-}
+  }
 
-.Billede3 {
-  grid-column: 3 / 4;
+  .Billede3 {
+    grid-column: 3 / 4;
     grid-row: 1;
-}
+  }
 
-.Billede4 {
-  grid-column: 4 / 5;
+  .Billede4 {
+    grid-column: 4 / 5;
     grid-row: 1;
-}
+  }
 
-.Billede5 {
-  grid-column: 5 / 6;
+  .Billede5 {
+    grid-column: 5 / 6;
     grid-row: 1;
-}
+  }
 
+  /* Desktop version */
+  @media (min-width: 800px) {
+    /* Tekst */
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 36px;
+    }
 
-/* Desktop version */
-@media (min-width: 800px) {
+    .h33 {
+      margin-left: 50px;
+      margin-bottom: 0;
+    }
 
-/* Tekst */
-  h3 {
-  font-size: 24px;
-  font-weight: 700;
-  line-height: 36px;
-}
+    /* Grid */
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+      gap: 1em;
 
-.h33 {
-    margin-left: 50px;
-    margin-bottom: 0;
-}
+      padding: 30px;
+    }
 
-/* Grid */
-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 1em;
+    .Billede1 {
+      grid-column: 1 / 2;
+      grid-row: 1;
+    }
 
-  padding: 30px;
-}
+    .Billede2 {
+      grid-column: 2 / 3;
+      grid-row: 1;
+    }
 
-.Billede1 {
-  grid-column: 1 / 2;
-    grid-row: 1;
-}
+    .Billede3 {
+      grid-column: 3 / 4;
+      grid-row: 1;
+    }
 
-.Billede2 {
-  grid-column: 2 / 3;
-    grid-row: 1;
-}
+    .Billede4 {
+      grid-column: 4 / 5;
+      grid-row: 1;
+    }
 
-.Billede3 {
-  grid-column: 3 / 4;
-    grid-row: 1;
-}
-
-.Billede4 {
-  grid-column: 4 / 5;
-    grid-row: 1;
-}
-
-.Billede5 {
-  grid-column: 5 / 6;
-    grid-row: 1;
-}
-}
+    .Billede5 {
+      grid-column: 5 / 6;
+      grid-row: 1;
+    }
+  }
 </style>
-
-    

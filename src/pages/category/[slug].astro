@@ -1,0 +1,109 @@
+---
+import Header from "../../components/Header.astro";
+import Produktbilleder from "../../components/Produktbilleder.astro";
+import Billederække from "../../components/Billederække.astro";
+import Footer from "../../components/Footer.astro";
+export async function getStaticPaths() {
+  //   const data = await fetch(
+  //     "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/boom",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         apikey:
+  //           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
+  //       },
+  //     }
+  //   ).then((response) => response.json());
+  return [
+    { params: { slug: "hoodie" }, props: { slug: "hoodie" } },
+    { params: { slug: "longshirt" }, props: { slug: "longshirt" } },
+    { params: { slug: "shortshirt" }, props: { slug: "shortshirt" } },
+    { params: { slug: "joggingpants" }, props: { slug: "joggingpants" } },
+    { params: { slug: "full-zip-hoodie" }, props: { slug: "full-zip-hoodie" } },
+    {
+      params: { slug: "crewneck-sweatshirt" },
+      props: { slug: "crewneck-sweatshirt" },
+    },
+    {
+      params: { slug: "half-zip-sweatshirt" },
+      props: { slug: "half-zip-sweatshirt" },
+    },
+  ];
+  //   return data.map((product) => {
+  //     return {
+  //       params: { slug: product.slug },
+  //       props: { myData: product },
+  //     };
+  //   });
+}
+
+// const { myData } = Astro.props;
+console.log(Astro.props);
+const data = await fetch(
+  "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/boom?category=eq." +
+    Astro.props.slug,
+  {
+    method: "GET",
+    headers: {
+      apikey:
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
+    },
+  }
+).then((response) => response.json());
+console.log(data);
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../public/img/favicon_yellow.webp"
+    />
+    <link rel="stylesheet" href="../../src/layout/stylesheet.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/nim4iic.css" />
+    <title>Produktliste</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section class="produktbilleder">
+        {
+          data.map((product) => {
+            return <Produktbilleder data={product} />;
+          })
+        }
+      </section>
+
+      <section class="billederække">
+        <Billederække />
+      </section>
+    </main>
+    <!-- <section class="billederække">
+       
+      </section> -->
+  </body>
+  <Footer />
+</html>
+
+<style>
+  .produktbilleder {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+
+    padding: 20px;
+  }
+
+  @media (min-width: 800px) {
+    .produktbilleder {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1em;
+
+      padding: 80px;
+    }
+  }
+</style>

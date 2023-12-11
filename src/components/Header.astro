@@ -1,3 +1,7 @@
+---
+const { data } = Astro.props;
+---
+
 <header class="header">
   <div class="top_header">
     <p>Returret hele januar 2024</p>
@@ -87,22 +91,52 @@
                   <h3>KATEGORIER</h3>
                   <ul>
                     <li>
-                      <a class="child" href="#">HOODIE</a>
+                      <a class="child" href="../category/hoodie">Hoodie</a>
                     </li>
                   </ul>
                   <ul>
                     <li>
-                      <a class="child" href="#">SWEATSHIRT</a>
+                      <a class="child" href="../category/longshirt"
+                        >Langærmede T-shirt</a
+                      >
                     </li>
                   </ul>
                   <ul>
                     <li>
-                      <a class="child" href="#">T-SHIRT</a>
+                      <a class="child" href="../category/shortshirt">T-SHIRT</a>
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a class="child" href="../category/joggingpants"
+                        >Joggingbukser</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a class="child" href="../category/full-zip-hoodie"
+                        >Full-zip Hoodie</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a class="child" href="../category/crewneck-sweatshirt"
+                        >Crewneck Sweater</a
+                      >
+                    </li>
+                  </ul>
+                  <ul>
+                    <li>
+                      <a class="child" href="../category/half-zip-sweatshirt"
+                        >Half-zip Sweater</a
+                      >
                     </li>
                   </ul>
                 </div>
                 <div class="list-img">
-                  <a href="">
+                  <a href="../category/hoodie">
                     <img
                       class="image"
                       src="../../public/img/sort_hoodie_front.webp"
@@ -136,7 +170,7 @@
                       </svg>
                     </p></a
                   >
-                  <a href="">
+                  <a href="../category/shortshirt">
                     <img
                       class="image"
                       src="../../public/img/hvid_tshirt_front.webp"
@@ -216,7 +250,7 @@
       </div>
       <div class="header-item-center">
         <div class="logo">
-          <img src="../../public/img/nylogo.svg" alt="logo" />
+          <a href="/"><img src="../../public/img/nylogo.svg" alt="logo" /></a>
         </div>
       </div>
       <div class="header-item-right">
@@ -319,11 +353,33 @@
               </li>
 
               <li>
-                <a class="child" href="#">SWEATSHIRT</a>
+                <a class="child" href="../category/longshirt"
+                  >Langærmede T-shirt</a
+                >
               </li>
 
               <li>
-                <a class="child" href="#">T-SHIRT</a>
+                <a class="child" href="../category/shortshirt">T-SHIRT</a>
+              </li>
+              <li>
+                <a class="child" href="../category/joggingpants"
+                  >Joggingbukser</a
+                >
+              </li>
+              <li>
+                <a class="child" href="../category/full-zip-hoodie"
+                  >Full-zip Hoodie</a
+                >
+              </li>
+              <li>
+                <a class="child" href="../category/crewneck-sweatshirt"
+                  >Crewneck Sweater</a
+                >
+              </li>
+              <li>
+                <a class="child" href="../category/half-zip-sweatshirt"
+                  >Half-zip Sweater</a
+                >
               </li>
             </ul>
           </div>

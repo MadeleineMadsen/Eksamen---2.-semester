@@ -4,10 +4,10 @@ const { data } = Astro.props;
 
 <!-- HTML -->
 <div class="B-T1">
-  <a href={`product/${data.slug}`}>
+  <a href={`/product/${data.slug}`}>
     <img src=`/img/${data.img}` alt="Testbillede" />
   </a>
-  <a href={`product/${data.slug}`}> <h3>{data.name}</h3></a>
+  <a href={`/product/${data.slug}`}> <h3>{data.name}</h3></a>
   <p>{data.price}</p>
 </div>
 
