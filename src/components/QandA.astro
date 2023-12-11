@@ -1,0 +1,169 @@
+<h2>Få hurtigt svar på dit spørgsmål her</h2>
+
+<div class="container">
+  <button type="button" class="collapsible"
+    >Levering<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>
+      Boom Butik sender til Danmark. Vi sender også til Sverige fra <a
+        href="https://boombutik.se/"
+        target="_blank">boombutik.se</a
+      >.
+    </p>
+
+    <p>
+      Ordrer afgivet på hverdage inden kl. 15.30 afsendes samme dag.
+      Leveringstid er 1-2 hverdage ... alleroftest kun én!
+    </p>
+
+    <p>
+      Levering til pakkeshop er gratis ved ordrer på 400 DKK eller mere. Ved
+      ordrer på 400 DKK eller mere kan hjemmelevering tilkøbes for 19 DKK. Køber
+      du for mindre end 400 DKK, koster levering til pakkeshop 39 DKK, mens
+      hjemmelevering koster 49 DKK.
+    </p>
+  </div>
+
+  <button type="button" class="collapsible"
+    >Returnering<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>
+      Ordrer bestilt den 15. oktober 2023 og derefter kan returneres til og med
+      den 31. januar 2024.
+    </p>
+
+    <p>
+      Brug blot det vedlagte returlabel, eller skriv til <a
+        href="mailto:kontakt@boombutik.dk">kontakt@boombutik.dk</a
+      >. For returforsendelsen beholder vi 25 kr. pr. returneret ordre – ikke
+      pr. returneret produkt, men pr. returneret ordre.
+    </p>
+
+    <p>
+      Du er også velkommen til at bytte og returnere varer i vores butik på
+      Rosenørns Allé i København.
+    </p>
+
+    <p>
+      Når den ubrugte vare er nået butikken i hænde, tilbagebetales dens pris i
+      løbet af 7 hverdage.
+    </p>
+  </div>
+
+  <button type="button" class="collapsible"
+    >Reklamation<span class="icon"></span></button
+  >
+  <div class="content">
+    <p>
+      Der gives 2 års reklamationsret i henhold til købeloven. Reklamationsret
+      gælder for fejl i materiale eller fabrikation. Reklamationen gælder ikke
+      fejl eller skader begået ved forkert betjening af produktet.
+    </p>
+    <p>
+      Du hæfter kun for eventuel forringelse af varens værdi, som skyldes anden
+      håndtering, end hvad der er nødvendigt for at fastslå varens art,
+      egenskaber og den måde, den fungerer på. Med andre ord – du kan prøve
+      varen på samme måde, som hvis du prøvede den i en fysisk butik. Hvis varen
+      er prøvet udover, hvad der er beskrevet ovenfor, betragter vi den som
+      brugt, hvilket betyder, at du ved fortrydelse af købet kun får en del
+      eller intet af købsbeløbet retur, afhængig af varens handelsmæssige værdi.
+      For at modtage hele købsbeløbet retur må du altså gøre det samme, som man
+      kan i en fysisk butik. Du må afprøve varen, men ikke tage den i egentlig
+      brug.
+    </p>
+  </div>
+</div>
+
+<style>
+  h2 {
+    font-size: 20px;
+    color: #0a369c;
+    text-align: center;
+    padding: 60px 20px 20px 20px;
+  }
+  img {
+    width: 70%;
+  }
+
+  .collapsible .icon::before {
+    content: "";
+    display: inline-block;
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background: url("../../public/img/plus.svg") center/contain no-repeat;
+  }
+
+  .collapsible.active .icon::before {
+    content: "";
+    margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background: url("../../public/img/minus.svg") center/contain no-repeat;
+  }
+  .collapsible {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .collapsible.active {
+    background-color: #f2e6b6;
+  }
+  .content {
+    max-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    font-size: 14px;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ecedec;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .active + .content {
+    max-height: 600px;
+  }
+  .container {
+    margin-bottom: 40px;
+    padding: 0 20px 0 20px;
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      font-size: 26px;
+    }
+    .container {
+      margin: 0 240px 60px 240px;
+    }
+    .collapsible {
+      margin: 20px 0 0 0;
+      font-size: 20px;
+    }
+    .collapsible .icon::before,
+    .collapsible.active .icon::before {
+      width: 20px;
+      height: 20px;
+    }
+  }
+</style>
+<script>
+  const coll = document.querySelectorAll(".collapsible");
+
+  coll.forEach((element) => {
+    element.addEventListener("click", function () {
+      element.classList.toggle("active");
+    });
+  });
+</script>

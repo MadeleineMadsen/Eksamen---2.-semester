@@ -1,0 +1,59 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import QandA from "../components/QandA.astro";
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../public/img/favicon_yellow.webp"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../src/layout/stylesheet.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/nim4iic.css" />
+    <title>Kontakt</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1>Kontakt</h1>
+      <p>
+        Kontakt os via e-mail: <a href="mailto:kontakt@boombutik.dk"
+          >kontakt@boombutik.dk</a
+        >
+      </p>
+      <p>Mandag til fredag: 9:00 - 17:00</p>
+      <QandA />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  main {
+    margin: 20px;
+  }
+  a {
+    color: #000000;
+  }
+  p {
+    font-size: 14px;
+  }
+  h1 {
+    color: #0a369c;
+    padding-top: 20px;
+  }
+
+  @media (min-width: 800px) {
+    h1 {
+      margin: 40px 0 0 60px;
+    }
+    p {
+      margin: 25px 0 0 60px;
+    }
+  }
+</style>
