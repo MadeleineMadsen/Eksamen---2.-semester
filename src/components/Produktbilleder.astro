@@ -1,13 +1,17 @@
+---
+const { data } = Astro.props;
+---
+
 <!-- HTML -->
-<section>
-  <div class="B-T1">
-    <img src="/img/test1.webp" alt="Testbillede" />
+<div class="B-T1">
+  <a href={`product/${data.slug}`}>
+    <img src=`/img/${data.img}` alt="Testbillede" />
+  </a>
+  <a href={`product/${data.slug}`}> <h3>{data.name}</h3></a>
+  <p>{data.price}</p>
+</div>
 
-    <h3>Blå sweatshirt</h3>
-    <p>150 kr</p>
-  </div>
-
-  <div class="B-T2">
+<!-- <div class="B-T2">
     <img src="/img/test2.webp" alt="Testbillede" />
 
     <h3>Grå sweatshirt</h3>
@@ -19,8 +23,7 @@
 
     <h3>Sort sweatshirt</h3>
     <p>150 kr</p>
-  </div>
-</section>
+  </div> -->
 
 <!-- Styling -->
 <style>
@@ -51,10 +54,10 @@
     padding: 20px;
   }
 
-  .B-T1 {
+  /* .B-T1 {
     grid-column: 1 / 2;
     grid-row: 1;
-  }
+  } */
 
   .B-T2 {
     grid-column: 2 / 3;
@@ -90,10 +93,10 @@
       padding: 80px;
     }
 
-    .B-T1 {
+    /* .B-T1 {
       grid-column: 1 / 2;
       grid-row: 1;
-    }
+    } */
 
     .B-T2 {
       grid-column: 2 / 3;

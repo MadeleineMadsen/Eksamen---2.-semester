@@ -1,0 +1,325 @@
+---
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import Farve from "../../components/Farve.astro";
+import Sizing from "../../components/Sizing.astro";
+import AddToCart from "../../components/AddToCart.astro";
+import Info from "../../components/Info.astro";
+export async function getStaticPaths() {
+  const data = await fetch(
+    "https://jszlkwoagoveednauwsf.supabase.co/rest/v1/boom",
+    {
+      method: "GET",
+      headers: {
+        apikey:
+          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impzemxrd29hZ292ZWVkbmF1d3NmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTM5MDIzOTcsImV4cCI6MjAwOTQ3ODM5N30.sGTpEXzcNBQo-quSAoZl_aTwHVa1YCVeSl5jBzohEy0",
+      },
+    }
+  ).then((response) => response.json());
+
+  return data.map((product) => {
+    return {
+      params: { slug: product.slug },
+      props: { myData: product },
+    };
+  });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+---
+
+<html lang="da">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/webp"
+      href="../../public/img/favicon_yellow.webp"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="../../src/layout/stylesheet.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/nim4iic.css" />
+    <title>Produkt</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <section>
+        <div class="Billede1">
+          <img src=`/img/${myData.img}` alt="Testbillede" />
+        </div>
+
+        <div class="Billede2">
+          <img src=`/img/${myData.img_1}` alt="" />
+        </div>
+
+        <div class="Billede3">
+          <img src=`/img/${myData.img_2}` alt="" />
+        </div>
+
+        <div class="Billede4">
+          <img src=`/img/${myData.img_3}` alt="" />
+        </div>
+
+        <!-- <div class="Billede5">
+          <img src="/img/lilleP4.webp" alt="Testbillede" />
+        </div>  -->
+      </section>
+
+      <div class="desktop_info">
+        <h2>{myData.name}</h2>
+        <p>{myData.price}</p>
+
+        <Farve />
+        <Sizing />
+        <AddToCart />
+        <div class="container">
+          <button type="button" class="collapsible"
+            >Beskrivelse<span class="icon"></span></button
+          >
+          <div class="content">
+            <p>
+              {myData.about}
+            </p>
+          </div>
+
+          <button type="button" class="collapsible"
+            >Detaljer<span class="icon"></span></button
+          >
+          <div class="content">
+            <p>Fruit of the Loom</p>
+            <p>{myData.detail}</p>
+
+            <p><strong>Særlige varianter</strong></p>
+            <p>
+              De mørkegrå og olivengrønne er af modellen Premium Set-In Sweat.
+              Det betyder kun at kvaliteten er en smule tykkere og blødere. De
+              koster os lidt mere i indkøb og er derfor 25 kr. dyrere end de
+              andre crews. De består af 70 % bomuld og 30 % polyester.
+            </p><p>
+              Den mørkebrune er af mærket Gildan, men modellen ligner vores
+              andre crewneck sweatshirts fra Fruit of the Loom. Den er også en
+              smule dyrere i indkøb og ligger derfor også til 175 kr. Den består
+              af lige dele bomuld og polyester.
+            </p>
+          </div>
+
+          <button type="button" class="collapsible"
+            >Levering og retur<span class="icon"></span></button
+          >
+          <div class="content">
+            <p>
+              <strong>Levering</strong>
+            </p>
+            <p>
+              Alle ordrer, der bestilles inden 15.30 i hverdagen, sendes samme
+              dag.
+            </p>
+
+            <p><strong>Retur</strong></p>
+            <p>
+              Det er virkelig nemt at returnere en vare, hvis du har behov for
+              det.
+            </p>
+
+            <p>
+              I din pakke ligger der et selvklæbende returlabel, som du blot
+              skal sætte på pakken og indlevere hos en GLS-pakkeshop. Du behøver
+              ikke at gøre mere end det.
+            </p>
+
+            <p>
+              Når vi har modtaget din returnering, tilbagebetaler vi
+              varen/varernes pris. Vi beholder dog 25 kr. til at dække noget af
+              omkostningen for returfragten. Det er ikke pr. returneret vare,
+              men pr. returneret ordre.
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+  }
+  section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 5px;
+    padding: 20px;
+    padding-top: 30px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  p {
+    font-size: 14px;
+  }
+  h2,
+  p {
+    margin-left: 25px;
+  }
+  .Billede1 {
+    grid-column: 1 / 5;
+    grid-row: 1;
+    justify-items: center;
+  }
+
+  .Billede2 {
+    grid-column: 1 / 2;
+    grid-row: 2;
+    margin: 4px 4px 0 0;
+  }
+
+  .Billede3 {
+    grid-column: 2 / 3;
+    grid-row: 2;
+    margin: 4px 2px 0 2px;
+  }
+
+  .Billede4 {
+    grid-column: 3 / 4;
+    grid-row: 2;
+    margin: 4px 2px 0 2px;
+  }
+
+  .Billede5 {
+    grid-column: 4 / 5;
+    grid-row: 2;
+    margin: 4px 0 0 4px;
+  }
+
+  .collapsible .icon::before {
+    content: "+";
+    display: inline-block;
+    margin-right: 10px;
+  }
+
+  .collapsible.active .icon::before {
+    content: "-";
+    margin-right: 10px;
+  }
+  .collapsible {
+    display: flex;
+    background-color: #ffffff;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    font-weight: 700;
+    transition: background-color 0.3s ease-in;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  .collapsible.active {
+    background-color: #f2e6b6;
+  }
+  .content {
+    max-height: 0;
+    padding: 0 20px;
+    overflow: hidden;
+    font-size: 14px;
+    transition: max-height 0.3s ease-in-out;
+    background-color: #ecedec;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+  .active + .content {
+    max-height: 800px;
+  }
+  .container {
+    margin-bottom: 40px;
+    padding: 0 20px 0 20px;
+  }
+
+  @media (min-width: 800px) {
+    h2 {
+      font-size: 26px;
+    }
+    p {
+      font-size: 20px;
+      margin-bottom: 60px;
+    }
+    main {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    section {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      padding: 0;
+      margin: 80px 0 80px 100px;
+      align-items: center;
+    }
+    .Billede2:hover,
+    .Billede3:hover,
+    .Billede4:hover,
+    .Billede5:hover {
+      border: 4px solid #0a369c;
+      cursor: pointer;
+    }
+    .Billede2,
+    .Billede3,
+    .Billede4,
+    .Billede5 {
+      border: 4px solid transparent;
+      box-sizing: border-box;
+      width: 45%;
+      align-content: space-between;
+    }
+    .Billede1 {
+      grid-column: 1 / 3;
+      grid-row: 1 / 5;
+    }
+    .Billede2 {
+      grid-column: 3 / 4;
+      grid-row: 1;
+      margin: 0 0 2px 8px;
+    }
+    .Billede3 {
+      grid-column: 3 / 4;
+      grid-row: 2;
+      margin: 2px 0 2px 8px;
+    }
+    .Billede4 {
+      grid-column: 3 / 4;
+      grid-row: 3;
+      margin: 2px 0 2px 8px;
+    }
+    .Billede5 {
+      grid-column: 3 / 4;
+      grid-row: 4;
+      margin: 2px 0 0 8px;
+    }
+    .desktop_info {
+      grid-column: 4 / 6;
+      grid-row: 1 / 5;
+      margin: 80px 80px 80px 0;
+    }
+
+    .container {
+      margin-bottom: 0;
+      padding-left: 0;
+    }
+  }
+</style>
+<script>
+  const coll = document.querySelectorAll(".collapsible");
+
+  coll.forEach((element) => {
+    element.addEventListener("click", function () {
+      element.classList.toggle("active");
+    });
+  });
+</script>
