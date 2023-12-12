@@ -442,9 +442,26 @@ const { data } = Astro.props;
 </header>
 
 <style>
-  header {
-    line-height: 1.5;
+  .container {
+    background-color: #ecedec;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 100%;
   }
+  .shopping_icon {
+    content: "";
+    display: inline-block;
+  }
+  .logo {
+    display: grid;
+    justify-items: center;
+  }
+  .logo img {
+    width: 100%;
+  }
+
   * {
     margin: 0%;
     box-sizing: border-box;
@@ -455,22 +472,14 @@ const { data } = Astro.props;
     box-sizing: border-box;
   }
 
-  .container {
-    background-color: #ecedec;
-    margin: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    max-width: 100%;
-  }
-
   .v-center {
     align-items: center;
-    display: flex;
+    display: grid;
     flex-wrap: wrap;
     justify-content: space-between;
     max-width: 100%;
     width: 100%;
+    padding: 22px 6px 20px 6px;
   }
 
   ul {
@@ -493,9 +502,16 @@ const { data } = Astro.props;
 
   .header-item-left {
   }
-  .header-item-center {
+  .header-item-right {
+    background: url("../../public/img/shopping_bag.svg") center/contain
+      no-repeat;
+    height: 24px;
+    align-items: flex-end;
+    justify-self: flex-end;
   }
-
+  .shopping_icon {
+    margin-right: 40px;
+  }
   .header .menu > ul > li {
     display: inline-block;
     line-height: 50px;
@@ -515,7 +531,6 @@ const { data } = Astro.props;
     position: absolute;
     z-index: 500;
     background-color: #ecedec;
-    /* box-shadow: -2px 2px 70px -25px rgba(0, 0, 0, 0.3); */
     padding: 20px 30px;
     transition: all 0.5s ease;
     margin-top: 25px;
@@ -531,44 +546,35 @@ const { data } = Astro.props;
       justify-content: space-around;
     }
     .top_header p {
-      font-size: 12px;
+      font-size: 14px;
       color: #0a369d;
       margin-top: 5px;
       margin-bottom: 5px;
     }
+    .header-item-right {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .header-item-right p {
+      margin-right: 40px;
+      font-size: 20px;
+    }
     .v-center {
-      margin-right: 4rem;
-      margin-left: 4rem;
-      margin-top: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      justify-content: space-between;
     }
     .header .menu > ul > li.menu-item-has-children:hover .sub-menu {
-      margin-top: 0%;
+      margin-top: 1.5%;
       visibility: visible;
       opacity: 1;
     }
-    .header .menu > ul > li .sub-menu > ul > li {
-      line-height: 1;
+
+    .logo img {
+      width: 300px;
     }
 
-    .header .menu > ul > li .sub-menu > ul > li > a {
-      display: inline-block;
-      padding: 10px 0;
-      font-size: 15px;
-      color: #ecedec;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
-    .header .menu > ul > li .single-column-menu {
-      min-width: 280px;
-      max-width: 350px;
-    }
-
-    .header .menu > ul > li .sub-menu.mega-menu {
-    }
-    .logo {
-      box-sizing: border-box;
-      margin-right: 6.5rem;
-    }
     .header .menu > ul > li .sub-menu.mega-column-menu-4 {
       max-width: 2000px;
       width: 100%;
@@ -630,19 +636,9 @@ const { data } = Astro.props;
     .img-text-2:hover svg {
       stroke: #0a369d;
     }
-    .header .menu > ul > li .sub-menu.mega-column-menu-4 > .list-img {
-      max-width: 100%;
-      width: 50%;
-      /* width: 100%; */
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 1rem;
-    }
     .header .menu > ul > li .sub-menu > ul > li > a:hover,
     .header .menu > ul > li > a:hover,
     #button.hover-persist {
-      /* Use .hover-persist for the hovered state */
       background-color: #0a369d;
       color: #ffffff;
       padding: 12px;
@@ -655,33 +651,12 @@ const { data } = Astro.props;
 
     .button:hover svg path,
     .button.hover-persist svg path {
-      fill: #ffffff; /* White color */
+      fill: #ffffff;
     }
 
     .svg:hover {
       color: #ffffff;
     }
-
-    .header-item-right {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
-    }
-    .header-item-right a {
-      color: black;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.7rem;
-    }
-
-    /* banner section*/
-    .banner-section {
-      background-color: #ecedec;
-      height: 700px;
-      width: 100%;
-      display: block;
-    }
-
     .mobil-menu-trigger {
       display: none;
     }
@@ -698,37 +673,16 @@ const { data } = Astro.props;
     .top_header {
       display: none;
     }
-    /* .logo img {
-      height: 100px;
-      width: 100px;
-    } */
-    .header .item-center {
-      order: 3;
-      flex: 0 0 100%;
-    }
-    .header .item-right svg {
-      margin-top: 12px;
-    }
-    .header .item-right,
-    .header .header-item-left {
-      flex: 0 0 auto;
-      flex-direction: column;
-    }
-
-    .v-center {
-      justify-content: space-between;
-      border-bottom: solid black 1px;
-    }
-
     .header .mobil-menu-trigger {
       display: flex;
-      height: 30px;
       width: 30px;
-
       margin-left: 15px;
       cursor: pointer;
     }
 
+    .v-center {
+      display: flex;
+    }
     .main-menu-mobil {
       background-color: #ecedec;
       display: flex;
@@ -738,7 +692,6 @@ const { data } = Astro.props;
     .header .menu > ul {
       position: relative;
       display: none;
-
       flex-direction: column;
       width: 100%;
       max-width: 100%;
@@ -749,126 +702,59 @@ const { data } = Astro.props;
       visibility: hidden;
     }
     /* burger  */
-    #icon1 {
-      margin: 0;
-      /* display: block; */
-    }
+    #icon1,
     #icon2 {
       margin: 0;
-      /* display: none; */
     }
-
-    .header.toggled #icon1 {
-      display: none;
-    }
-    .header.toggled #icon2 {
-      display: block;
-    }
-    /* Style the menu items for toggled state */
-    .header.toggled .main-menu {
-      /* Styles for your menu items when toggled */
-    }
-    .menu-item-has-children {
-      max-width: 100%;
-      width: 453px;
-      margin-right: 10px;
-      border-bottom: solid black 1px;
-
-      /* top: 1rem;
-    position: relative; */
-    }
-    .menu-name {
-      color: black;
-    }
+    .menu-name,
     .menu-info {
       color: black;
     }
-    .menu-name.white-text {
+    .menu-name.white-text,
+    .menu-info.white-text,
+    .dropdown a,
+    .dropdown h3 {
       color: white;
     }
-    .menu-info.white-text {
-      color: white;
+    h3 {
+      padding-top: 10px;
+      font-size: 16px;
     }
     .menu-item-has-children :active {
       position: static;
     }
-
     .menu-item-has-children a {
       display: flex;
       flex-wrap: wrap;
-      /* gap: 5rem; */
       justify-content: space-around;
-      /* background-color: #ecedec; */
-      position: relative; /* If needed */
+      position: relative;
     }
 
     .child:hover {
       border-bottom: #ffffff 2px solid;
     }
     .menu-item-has-children.active {
-      background-color: #0a369d; /* or any color you prefer */
+      background-color: #0a369d;
     }
-
-    #plus {
-    }
-    #minus {
-    }
-
-    .mega-column-menu-4 {
-      /* position: relative; /* Adjust if needed */
-      /* Add any additional styling for the dropdown here */
-    }
-
-    .menu-mobil {
-      /* display: grid;
-    column-gap: 2rem;
-    gap: 2rem; */
-    }
-
     .menu-item-has-children.toggled .mega-column-menu-4 {
-      display: block; /* Shown when toggled */
+      display: block;
     }
-
-    .main-menu-mobil {
-      /* display: grid;
-    grid-auto-rows: 6rem; */
-    }
-
     .hidden {
       display: none;
     }
-
-    .dropdown {
-      background-color: #0a369d;
-      display: flex;
-      justify-content: flex-start;
-      flex-direction: column;
-    }
-
-    .dropdown a {
-      color: white;
-    }
-    .dropdown h3 {
-      color: white;
-    }
-
     .menu-item {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+      padding: 10px 0 14px 0;
     }
     .dropdown-item {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      padding-top: 5px;
-      padding-bottom: 5px;
-      padding-left: 9rem;
+      padding: 5px 0 25px 80px;
       gap: 1rem;
     }
-
     svg {
       color: black;
-      margin-top: 9px;
+      margin: 6px 0 6px 0;
     }
   }
 </style>
@@ -877,8 +763,8 @@ const { data } = Astro.props;
   document
     .getElementById("theme-button")
     .addEventListener("click", function () {
-      var icon1 = document.getElementById("icon1");
-      var icon2 = document.getElementById("icon2");
+      var icon = document.getElementById("icon1");
+      var icon = document.getElementById("icon2");
 
       document.querySelector(".main-menu-mobil").classList.toggle("hidden");
       document.querySelector("#icon2").classList.toggle("hidden");
@@ -897,7 +783,6 @@ const { data } = Astro.props;
         var minus = menuItem.querySelector(".minus");
         var dropdown = menuItem.querySelector(".mega-column-menu-4");
 
-        console.log("Dropdown current display:", dropdown.style.display);
         plus.classList.toggle("hidden");
         minus.classList.toggle("hidden");
         dropdown.classList.toggle("hidden");
