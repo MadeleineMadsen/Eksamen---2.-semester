@@ -5,27 +5,29 @@ import LandingBilleder from "../components/LandingBilleder.astro";
 import Trustpilot from "../components/Trustpilot.astro";
 import GridBillede from "../components/GridBillede.astro";
 ---
-<div class="head_img">
-   <img
-      src="../../public/img/logo_headerbillede.webp"
-      alt="Billede af Boom Butik tøj"
-    />
-<KnapLanding/>
-</div>
 
-    <h1>Velkommen til vores komfortable univers</h1>
-    <h2>Et community hvor alle kan sprede deres vinger</h2>
-<KnapSecond/>
-<LandingBilleder/>
-<Trustpilot/>
-<GridBillede/>
+<div class="head_img">
+  <img
+    src="../../public/img/logo_headerbillede.webp"
+    alt="Billede af Boom Butik tøj"
+  />
+  <KnapLanding />
+</div>
+<div class="mobile">
+  <h1>Velkommen til vores komfortable univers</h1>
+  <h2>Et community hvor alle kan sprede deres vinger</h2>
+  <KnapSecond />
+</div>
+<LandingBilleder />
+<Trustpilot />
+<GridBillede />
 <style>
-    
   body {
     margin: 0;
     padding: 0;
   }
-  .head_img {
+  .head_img,
+  .mobile {
     position: relative;
   }
 
@@ -43,7 +45,7 @@ import GridBillede from "../components/GridBillede.astro";
     line-height: 20px;
     font-weight: 700;
     padding: 20px 20px 0px 20px;
-    margin-top:20px;
+    margin-top: 20px;
   }
   h2 {
     font-size: 14px;
@@ -54,11 +56,11 @@ import GridBillede from "../components/GridBillede.astro";
 
   @media (min-width: 800px) {
     h1 {
-        font-size: 36px;
-        margin-top:60px
+      font-size: 36px;
+      margin-top: 60px;
     }
     h2 {
-        font-size: 24px;
+      font-size: 24px;
     }
-}
+  }
 </style>
