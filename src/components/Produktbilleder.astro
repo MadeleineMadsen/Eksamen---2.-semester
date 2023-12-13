@@ -61,16 +61,6 @@ const { data } = Astro.props;
     grid-column: auto;
   }
 
-  /* .B-T2 {
-    grid-column: 2 / 3;
-    grid-row: 1;
-  }
-
-  .B-T3 {
-    grid-column: 1 / 2;
-    grid-row: 2;
-  } */
-
   /* Desktop version */
   @media (min-width: 800px) {
     /* Tekst */
@@ -98,16 +88,8 @@ const { data } = Astro.props;
     }
     .B-T1 {
       margin: 10px 20px 10px 20px;
-    }
-
-    .B-T2 {
-      grid-column: 2 / 3;
-      grid-row: 1;
-    }
-
-    .B-T3 {
-      grid-column: 3 / 4;
-      grid-row: 1;
+      grid-row: auto;
+      grid-column: auto;
     }
   }
 </style>
