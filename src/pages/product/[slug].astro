@@ -145,105 +145,110 @@ console.log(myData);
 </html>
 
 <style>
-  img {
-    max-width: 100%;
-    display: block;
-    width: 100%;
-  }
-  section {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 5px;
-    padding: 40px 40px 0 40px;
-  }
-  h2 {
-    font-size: 20px;
-  }
-  p {
-    font-size: 14px;
-  }
-  h2,
-  p {
-    margin-left: 25px;
-  }
-  .Billede1 {
-    grid-column: 1 / 5;
-    grid-row: 1;
-    justify-items: center;
-  }
+  @media (max-width: 800px) {
+    img {
+      max-width: 100%;
+      display: block;
+      width: 100%;
+    }
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 5px;
+      padding: 40px 40px 0 40px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 14px;
+    }
+    h2,
+    p {
+      margin-left: 25px;
+    }
+    .Billede1 {
+      grid-column: 1 / 5;
+      grid-row: 1;
+      justify-items: center;
+    }
 
-  .Billede2 {
-    grid-column: 1 / 2;
-    grid-row: 2;
-    margin: 4px 4px 0 0;
-  }
+    .Billede2 {
+      grid-column: 1 / 2;
+      grid-row: 2;
+      margin: 4px 4px 0 0;
+    }
 
-  .Billede3 {
-    grid-column: 2 / 3;
-    grid-row: 2;
-    margin: 4px 2px 0 2px;
-  }
+    .Billede3 {
+      grid-column: 2 / 3;
+      grid-row: 2;
+      margin: 4px 2px 0 2px;
+    }
 
-  .Billede4 {
-    grid-column: 3 / 4;
-    grid-row: 2;
-    margin: 4px 2px 0 2px;
-  }
+    .Billede4 {
+      grid-column: 3 / 4;
+      grid-row: 2;
+      margin: 4px 2px 0 2px;
+    }
 
-  .Billede5 {
-    grid-column: 4 / 5;
-    grid-row: 2;
-    margin: 4px 0 0 4px;
-  }
+    .Billede5 {
+      grid-column: 4 / 5;
+      grid-row: 2;
+      margin: 4px 0 0 4px;
+    }
 
-  .collapsible .icon::before {
-    content: "+";
-    display: inline-block;
-    margin-right: 10px;
-  }
+    .collapsible .icon::before {
+      content: "+";
+      display: inline-block;
+      margin-right: 10px;
+    }
 
-  .collapsible.active .icon::before {
-    content: "-";
-    margin-right: 10px;
-  }
-  .collapsible {
-    display: flex;
-    background-color: #ffffff;
-    justify-content: space-between;
-    cursor: pointer;
-    padding: 20px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 16px;
-    font-weight: 700;
-    transition: background-color 0.3s ease-in;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    margin-top: 10px;
-  }
-  .collapsible.active {
-    background-color: #f2e6b6;
-  }
-  .content {
-    max-height: 0;
-    padding: 0 20px;
-    overflow: hidden;
-    font-size: 14px;
-    transition: max-height 0.3s ease-in-out;
-    background-color: #ecedec;
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-  .active + .content {
-    max-height: 800px;
-  }
-  .container {
-    margin-bottom: 40px;
-    padding: 0 20px 0 20px;
-  }
+    .collapsible.active .icon::before {
+      content: "-";
+      margin-right: 10px;
+    }
+    .collapsible {
+      display: flex;
+      background-color: #ffffff;
+      justify-content: space-between;
+      cursor: pointer;
+      padding: 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background-color 0.3s ease-in;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      margin-top: 10px;
+    }
+    .collapsible.active {
+      background-color: #f2e6b6;
+    }
+    .content {
+      max-height: 0;
+      padding: 0 20px;
+      overflow: hidden;
+      font-size: 14px;
+      transition: max-height 0.3s ease-in-out;
+      background-color: #ecedec;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    .active + .content {
+      max-height: 800px;
+    }
+    .container {
+      margin-bottom: 40px;
+      padding: 0 20px 0 20px;
+    }
 
+    main {
+      padding-top: 70px;
+    }
+  }
   @media (min-width: 800px) {
     h2 {
       font-size: 26px;
