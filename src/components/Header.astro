@@ -543,6 +543,9 @@ const { data } = Astro.props;
   }
 
   @media (min-width: 800px) {
+    .header {
+      position: fixed;
+    }
     .top_header {
       background-color: #f2e6b6;
       display: flex;
@@ -679,7 +682,8 @@ const { data } = Astro.props;
     }
 
     .header {
-      position: absolute;
+      position: fixed;
+      padding-top: 0%;
     }
     .header .mobil-menu-trigger {
       display: flex;
