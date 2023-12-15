@@ -197,14 +197,20 @@ console.log(myData);
   }
 
   .collapsible .icon::before {
-    content: "+";
+    content: "";
     display: inline-block;
     margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background: url("../../public/img/plus.svg") center/contain no-repeat;
   }
 
   .collapsible.active .icon::before {
-    content: "-";
+    content: "";
     margin-right: 10px;
+    width: 15px;
+    height: 15px;
+    background: url("../../public/img/minus.svg") center/contain no-repeat;
   }
   .collapsible {
     display: flex;
